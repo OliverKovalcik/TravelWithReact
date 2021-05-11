@@ -1,0 +1,29 @@
+{
+  "name": "travelwithreact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OliGit2/TravelWithReact.git"
+  },
+  "author": "kovalcik.oliver <oliver.kovalcik@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OliGit2/TravelWithReact/issues"
+  },
+  "homepage": "https://github.com/OliGit2/TravelWithReact#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react-refresh": "^1.3.3",
+    "vite": "^2.3.0"
+  }
+}
