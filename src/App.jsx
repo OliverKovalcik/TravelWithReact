@@ -1,3 +1,9 @@
 import React from "react"
-export const App=()=><h1>dfsafsdfds</h1>
+import { ChakraProvider } from "@chakra-ui/react"
+
+import {Home} from "./pages/Home.jsx"
+
+export const App = () => (<ChakraProvider>
+ <Home/>
+</ChakraProvider>) 
 
