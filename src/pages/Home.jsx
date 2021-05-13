@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, Center, Heading, Button } from "@chakra-ui/react";
+import React from 'react'
+import { Box, Center, Heading, Button } from '@chakra-ui/react'
 
 export const Home = () => (
   <Box backgroundImage="url('src/assets/image.jpg')" h="100vh">
@@ -12,4 +12,4 @@ export const Home = () => (
       </div>
     </Center>
   </Box>
-);
+)
