@@ -8,7 +8,7 @@ import { NavLink } from './NavLink'
 // eslint-disable-next-line react/prop-types
 export const Header = () => {
   return (
-    <Box as="header" m="2" shadow="base">
+    <Box as="header" m="4" p="4" shadow="base" fontSize="20">
       <Container
         maxWidth="container.xl"
         display="flex"

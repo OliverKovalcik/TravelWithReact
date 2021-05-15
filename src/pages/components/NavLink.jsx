@@ -5,7 +5,7 @@ import { Link, useMatch } from 'react-router-dom'
 
 export const NavLink = ({ to, ...rest }) => {
   const match = useMatch(to)
-  return <Button as={Link} to={to} isActive={!!match} variant="ghost" size="sm" {...rest} />
+  return <Button as={Link} to={to} isActive={!!match} variant="ghost" size="md" {...rest} />
 }
 
 NavLink.propTypes = {

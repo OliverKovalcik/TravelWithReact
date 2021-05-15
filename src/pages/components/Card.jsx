@@ -5,7 +5,7 @@ import { times } from 'lodash-es'
 import * as React from 'react'
 
 const Stars = ({ filledCount }) => {
-  return times(5, (i) => <StarIcon key={i} color={i < filledCount ? 'teal.300' : 'gray.200'} />)
+  return times(5, (i) => <StarIcon key={i} color={i < filledCount ? 'yellow.400' : 'gray.200'} />)
 }
 export const Card = ({
   imageUrl,
