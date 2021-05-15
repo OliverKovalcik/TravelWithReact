@@ -14,8 +14,6 @@ export const Card = ({
   formatedPrice,
   rating,
   reviewsCount,
-  // eslint-disable-next-line no-unused-vars
-  linkTo,
   isNew,
 }) => {
   return (
