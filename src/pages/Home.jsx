@@ -1,14 +1,19 @@
 import React from 'react'
-import { Box, Center, Heading, Button } from '@chakra-ui/react'
+import { Heading, Box, Center, Button } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
+import bg from '../assets/bg.jpg'
 
 export const Home = () => (
-  <Box backgroundImage="url('src/assets/image.jpg')" h="100vh">
+  <Box background={`url('${bg}') center / cover no-repeat`} h="100vh">
     <Center h="100vh">
       <div>
-        <Heading color="black" textAlign="center" mb="4">
-          Welcome
+        <Heading textAlign="center" margin="4">
+          Home Page
         </Heading>
-        <Button>For More Info</Button>
+
+        <Button as={Link} to="/offers">
+          Wellcome!
+        </Button>
       </div>
     </Center>
   </Box>
