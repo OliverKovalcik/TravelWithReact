@@ -13,15 +13,15 @@ import { FilterCards } from './components/FilterCards'
 export const Offers = () => {
   const { data, error, isLoading } = useOffers()
   const [newCards, setNewCards] = React.useState(false)
+  const [inputText, setInputText] = React.useState('')
   const toast = useToast()
   if (error) {
     toast({ status: 'error', title: 'something wrong ', description: 'sorry' })
   }
-
   return (
     <>
       <Header />
-      <HomeInput />
+      <HomeInput inputText={inputText} setInputText={setInputText} />
       <Grid templateColumns="repeat(4, 1fr)" gap={6}>
         <GridItem rowSpan={3}>
           <FilterNew newCards={newCards} setNewCards={setNewCards} />
@@ -35,6 +35,11 @@ export const Offers = () => {
           <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />
         ) : newCards ? (
           data
+            .filter(
+              (items) =>
+                items.country.toLowerCase().includes(inputText.toLowerCase()) ||
+                items.city.toLowerCase().includes(inputText.toLowerCase())
+            )
             .filter((items) => isItemNew(items.createdAt) === true)
             .map(
               ({ id, thumbnail, nights, city, country, price, rating, reviewCount, createdAt }) => {
@@ -54,23 +59,29 @@ export const Offers = () => {
               }
             )
         ) : (
-          data.map(
-            ({ id, thumbnail, nights, city, country, price, rating, reviewCount, createdAt }) => {
-              return (
-                <Card
-                  key={id}
-                  imageUrl={thumbnail}
-                  numberOfNights={nights}
-                  destination={`${city}, ${country}`}
-                  formatedPrice={formatPrice(price)}
-                  rating={rating}
-                  reviewsCount={reviewCount}
-                  linkTo="/offers/1"
-                  isNew={isItemNew(createdAt)}
-                />
-              )
-            }
-          )
+          data
+            .filter(
+              (items) =>
+                items.country.toLowerCase().includes(inputText.toLowerCase()) ||
+                items.city.toLowerCase().includes(inputText.toLowerCase())
+            )
+            .map(
+              ({ id, thumbnail, nights, city, country, price, rating, reviewCount, createdAt }) => {
+                return (
+                  <Card
+                    key={id}
+                    imageUrl={thumbnail}
+                    numberOfNights={nights}
+                    destination={`${city}, ${country}`}
+                    formatedPrice={formatPrice(price)}
+                    rating={rating}
+                    reviewsCount={reviewCount}
+                    linkTo="/offers/1"
+                    isNew={isItemNew(createdAt)}
+                  />
+                )
+              }
+            )
         )}
       </Grid>
     </>
